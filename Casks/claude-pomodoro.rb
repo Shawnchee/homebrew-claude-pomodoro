@@ -1,6 +1,6 @@
 cask "claude-pomodoro" do
-  version "0.1.3"
-  sha256 "b2181f2d2171ecb05f22adc6b0e87201da80c0643de80126bce2e7e55dce61b7"
+  version "0.1.4"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
 
   url "https://github.com/Shawnchee/claude-pomodoro/releases/download/v#{version}/Claude-Pomodoro-#{version}-arm64.dmg"
   name "Claude Pomodoro"
