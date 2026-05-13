@@ -1,8 +1,8 @@
 cask "claude-pomodoro" do
-  version "0.1.0"
-  sha256 "b64634b311dadc4ca2c45df37d93437a24abd362792d8b824315b76d3c9df23b"
+  version "0.1.2"
+  sha256 "77c7e44daa1a747a308a2ce1a535ff25a8e89114cfb8fd108d7626a8f4b679a2"
 
-  url "https://github.com/Shawnchee/claude-pomodoro/releases/download/v#{version}/Claude-Pomodoro-#{version}-arm64.dmg"
+  url "https://github.com/Shawnchee/claude-pomodoro/releases/download/v#{version}/Claude.Pomodoro-#{version}-arm64.dmg"
   name "Claude Pomodoro"
   desc "Pixel-art pomodoro timer with always-on-top floating window"
   homepage "https://github.com/Shawnchee/claude-pomodoro"
