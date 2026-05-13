@@ -4,25 +4,15 @@ Homebrew tap for [Claude Pomodoro](https://github.com/Shawnchee/claude-pomodoro)
 
 ## Install
 
-**Preferred** — skip the macOS Gatekeeper warning entirely by passing `--no-quarantine`:
-
-```bash
-brew install --cask --no-quarantine shawnchee/claude-pomodoro/claude-pomodoro
-```
-
-The `--no-quarantine` flag tells Homebrew to skip applying the `com.apple.quarantine` extended attribute to the app. By doing this you're telling your Mac you trust the source — review the [main repo](https://github.com/Shawnchee/claude-pomodoro) and the [cask file](Casks/claude-pomodoro.rb) before running if that matters to you.
-
-**Without the flag** — works too, but the first launch will trigger the "Apple could not verify" warning (see workaround below):
-
 ```bash
 brew install --cask shawnchee/claude-pomodoro/claude-pomodoro
 ```
 
-**Two-step alternative** — tap once, then install with the short name:
+Or tap once and install with the short name:
 
 ```bash
 brew tap shawnchee/claude-pomodoro
-brew install --cask --no-quarantine claude-pomodoro
+brew install --cask claude-pomodoro
 ```
 
 ## Requirements
@@ -32,7 +22,19 @@ brew install --cask --no-quarantine claude-pomodoro
 
 ## First-launch warning
 
-The app is unsigned, so macOS Gatekeeper will block the first launch:
+The app is currently unsigned, so macOS Gatekeeper blocks the first launch with an *"Apple could not verify..."* dialog. Code signing is on the roadmap once the project matures. In the meantime, pick one of the two workarounds below.
+
+### Fastest — strip the quarantine attribute
+
+After installing, run:
+
+```bash
+xattr -d com.apple.quarantine "/Applications/Claude Pomodoro.app"
+```
+
+This removes the `com.apple.quarantine` extended attribute that triggers Gatekeeper. The app will then launch normally. Review the [main repo](https://github.com/Shawnchee/claude-pomodoro) and the [cask file](Casks/claude-pomodoro.rb) before running if source trust matters to you.
+
+### GUI — approve via System Settings
 
 1. Open Launchpad or `/Applications/` and try to open Claude Pomodoro
 2. macOS shows *"Apple could not verify 'Claude Pomodoro' is free of malware..."* — click **Done**
